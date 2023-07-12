@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="POST" url="/V1/plumrocket/add/review">
+        <service class="Plumrocket\Reviews\Api\AddReviewInterface" method="execute" />
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <route method="GET" url="/V1/plumrocket/review/list">
+        <service class="Plumrocket\Reviews\Api\ReviewRepositoryInterface" method="getAll" />
+        <resources>
+            <resource ref="Plumrocket_Reviews::reviews" />
+        </resources>
+    </route>
+</routes>

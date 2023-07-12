@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Plumrocket\Reviews\Api\Data\ReviewInterface"
+                type="Plumrocket\Reviews\Model\Review"/>
+    <preference for="Plumrocket\Reviews\Api\ReviewRepositoryInterface"
+                type="Plumrocket\Reviews\Model\ReviewRepository"/>
+    <preference for="Plumrocket\Reviews\Api\Data\ReviewSearchResultInterface"
+                type="Magento\Framework\Api\Search\SearchResult"/>
+    <preference for="Plumrocket\Reviews\Api\AddReviewInterface"
+                type="Plumrocket\Reviews\Service\WebApi\AddReview"/>
+    <preference for="Plumrocket\Reviews\Api\Data\ReviewListInterface"
+                type="Plumrocket\Reviews\Model\ReviewList"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="plumrocket_reviews_listing_data_source"
+                      xsi:type="string">Plumrocket\Reviews\Model\ResourceModel\Review\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Plumrocket\Reviews\Model\ResourceModel\Review\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">plumrocket_reviews</argument>
+            <argument name="resourceModel" xsi:type="string">Plumrocket\Reviews\Model\ResourceModel\ReviewResource
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Plumrocket\Reviews\Block\Widget\Reviews">
+        <arguments>
+            <argument name="viewModels" xsi:type="array">
+                <item name="reviewsViewModel" xsi:type="object">Plumrocket\Reviews\ViewModel\Reviews</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
