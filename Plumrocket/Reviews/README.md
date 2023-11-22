@@ -16,3 +16,4 @@ In composer.json :
 * add new entry in `require` node:
 
   ```"plumrocket/module-reviews: "1.0.1"```
+* new point
