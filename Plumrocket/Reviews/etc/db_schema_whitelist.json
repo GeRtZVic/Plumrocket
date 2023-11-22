@@ -1,0 +1,19 @@
+{
+    "plumrocket_reviews": {
+        "column": {
+            "entity_id": true,
+            "title": true,
+            "review": true,
+            "pros": true,
+            "cons": true,
+            "customer_id": true,
+            "created_at": true
+        },
+        "index": {
+            "PLUMROCKET_REVIEWS_ENTITY_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

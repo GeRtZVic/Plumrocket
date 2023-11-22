@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:helloworld:Magento_Widget:etc/widget.xsd">
+    <widget class="Plumrocket\Reviews\Block\Widget\Reviews" id="plumrocket_reviews_widget">
+        <label>Review list</label>
+        <description>Reivews</description>
+        <parameters>
+            <parameter name="reviews" sort_order="10" visible="true" xsi:type="text">
+                <label>Custom Posts Label</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

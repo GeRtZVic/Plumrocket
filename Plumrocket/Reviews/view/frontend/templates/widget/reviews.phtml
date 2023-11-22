@@ -1,0 +1,40 @@
+<?php
+/** @var ReviewsBlock $block */
+/** @var Reviews $viewModel */
+
+use Plumrocket\Reviews\Block\Widget\Reviews as ReviewsBlock;
+use Plumrocket\Reviews\ViewModel\Reviews;
+
+$viewModel = $block->getData('reviewsViewModel');
+
+$reviews = $viewModel->getReviewList();
+if (count($reviews)): ?>
+<table>
+    <tbody>
+    <tr>
+        <th><?=  __("Title");?></th>
+        <th><?=  __("Review");?></th>
+        <th><?=  __("Pros");?></th>
+        <th><?=  __("Cons");?></th>
+    </tr>
+    <?php foreach ($reviews as $review):?>
+        <tr>
+            <td>
+                <?= $review->getTitle(); ?>
+            </td>
+            <td>
+                <?= $review->getReview(); ?>
+            </td>
+            <td>
+                <?= $review->getPros(); ?>
+            </td>
+            <td>
+                <?= $review->getCons(); ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?php else:?>
+    <?= __("No Reviews"); ?>
+<?php endif;?>

@@ -1,0 +1,82 @@
+<?php
+/** @var ReviewsBlock $block */
+
+use Plumrocket\Reviews\Block\Widget\Reviews as ReviewsBlock;
+?>
+<?php //todo escaper ?>
+<div class="col-md-8">
+    <form name="addData" method="post" id="add-review" class="form"
+          data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+          data-mage-init='{"validation":{}}'>
+        <fieldset class="fieldset">
+            <legend class="legend">
+                <span>
+                    <?= $block->escapeHtmlAttr(__('Fill Data')) ?>
+                </span>
+            </legend>
+            <fieldset class="fieldset row">
+                <div class="fields col-md-6">
+                    <div class="field name required">
+                        <label class="label" for="title">
+                            <span>
+                                <?= $block->escapeHtmlAttr(__('Title,')) ?>
+                            </span>
+                        </label>
+                        <div class="control">
+                            <input name="title" id="title" title="Title" value="" class="input-text" type="text"
+                                   data-validate="{required:true, 'validate-alphanum-with-spaces':true}">
+                        </div>
+                    </div>
+                    <div class="field name required">
+                        <label class="label" for="review">
+                            <span><?= $block-> escapeHtmlAttr(__('Review,')) ?></span>
+                        </label>
+                        <div class="control">
+                            <textarea name="review" id="review" title="Review" value="" class="input-text" type="text"
+                                      data-validate="{required:true, 'validate-alphanum-with-spaces':true}"></textarea>
+                        </div>
+                    </div>
+                    <div class="field name">
+                        <label class="label" for="pros">
+                            <span>
+                                <?= $block->escapeHtmlAttr(__('Pros')) ?>
+                            </span>
+                        </label>
+                        <div class="control">
+                            <input name="pros" id="pros" title="Pros" value="" class="input-text"
+                                   type="text" data-validate="{'validate-alphanum-with-spaces':true}">
+                        </div>
+                    </div>
+                    <div class="field name">
+                        <label class="label" for="cons">
+                            <span>
+                                <?= $block->escapeHtmlAttr(__('Cons')) ?>
+                            </span>
+                        </label>
+                        <div class="control">
+                            <input name="cons" id="cons" title="Cons" value="" class="input-text"
+                                   type="text" data-validate="{'validate-alphanum-with-spaces':true}">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </fieldset>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" class="action submit primary" title="Save">
+                    <span>
+                        <?= $block->escapeHtmlAttr(__('Save')) ?>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#add-review": {
+            "Plumrocket_Reviews/js/add-review": {}
+        }
+    }
+</script>
