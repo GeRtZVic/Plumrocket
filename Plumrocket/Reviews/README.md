@@ -1,6 +1,6 @@
 # module-swiss-post-graph-ql
 
-### Version `1.0.0`
+### Version `1.0.1`
 
 ## Installation
 
@@ -15,4 +15,6 @@ In composer.json :
 
 * add new entry in `require` node:
 
-  ```"plumrocket/module-reviews: "1.0.0"```
+  ```"plumrocket/module-reviews: "1.0.1"```
+* new point
+* new revision
