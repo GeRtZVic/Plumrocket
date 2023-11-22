@@ -17,3 +17,4 @@ In composer.json :
 
   ```"plumrocket/module-reviews: "1.0.1"```
 * new point
+* new revision
